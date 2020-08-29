@@ -3,9 +3,15 @@
   "version": "1.0.0",
   "description": "a website placeholder/template until the site is built",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "author": "Haidar Ezio",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HaidarEzio/coming-soon.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HaidarEzio/coming-soon/issues"
+  },
+  "homepage": "https://github.com/HaidarEzio/coming-soon#readme"
 }

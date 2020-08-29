@@ -15,11 +15,54 @@
         }
     </style>
     <link rel="stylesheet" href="./dist/style.css">
+    <link rel="shortcut icon" href="./img/logowhite.ico" type=" image/x-icon">
     <title>Coming Soon</title>
 </head>
 
 <body>
-
+    <canvas id="canvas-basic"></canvas>
+    <main class="header">
+        <div class="header__logo">
+            <a href="https://www.instagram.com/crimson.rock/">
+                <img class="header__logo--svg" src="img/logo black.svg" alt="logo"></a>
+        </div>
+        <section class="header--heading__main">
+            <h2 class="header--heading__text--secondary">It's Coming Soon</h2>
+            <h1 class="header--heading__text--primary">Our New Website <br> is on it's way !</h1>
+            <p class="header--heading__text--para">We are currently on new website and hopefully you will See the new
+                website this fall meanwhile you can follow Us here </p>
+            <section class="header--heading__icons">
+                <a href="https://www.instagram.com/crimson.rock/" target="_blank"><img
+                        class="header--heading__icons--each ig" src="img/bxl-instagram.svg" alt="instagram"></a>
+                <a href="https://github.com/HaidarEzio" target="_blank"><img class="header--heading__icons--each git"
+                        src="img/bxl-github.svg" alt="github"></a>
+            </section>
+        </section>
+        <footer class="footer">
+            <p class="footer__text">Made with 🖤 by
+                <img class="footer__logo--svg" src="img/rorschach BW.svg" alt="logo" valign="middle">
+                from <strong>Crismon Rock</strong>
+            </p>
+        </footer>
+    </main>
+    <script src="granim.min.js"></script>
+    <script>
+        var granimInstance = new Granim({
+            element: '#canvas-basic',
+            direction: 'left-right',
+            isPausedWhenNotInView: true,
+            states: {
+                "default-state": {
+                    gradients: [
+                        ['#E71C1C', '#DF9A8C'],
+                        ['#EDE9D0', '#3A001E'],
+                        ['#EFEFDC', '#5D0000']
+                    ]
+                },
+                transitionSpeed: 7000
+            }
+        });
+    </script>
 </body>
 
 </html>

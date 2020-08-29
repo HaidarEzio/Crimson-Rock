@@ -1,53 +1,145 @@
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+@font-face {
+  font-family: "K";
+  src: url("../img/Kiona-Regular.ttf");
+}
+
+@font-face {
+  font-family: "he";
+  src: url("../img/HelveticaNeueLTStd-Roman.otf");
+}
+
+@font-face {
+  font-family: "cd";
+  src: url("./img/CaviarDreams.ttf");
 }
 
 html {
-    box-sizing: border-box;
-    font-size: 62.5%; //? 16 is default, 10 is (10px/16px)=62.5%
+  box-sizing: border-box;
+  font-size: 62.5%; //? 16 is default, 10 is (10px/16px)=62.5%
 
-    @media only screen and (max-width: 688px) and (min-width: 425px) {
-        font-size: 50%; //? 8px
-    }
+  @media only screen and (max-width: 688px) and (min-width: 425px) {
+    font-size: 50%; //? 8px
+  }
 
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 
-    //TODO in here, you have to increase the numbers rather than lower
-    @media only screen and (max-width: 425px) {
-        font-size: 31.25%; //? 5px
-    }
+  //TODO in here, you have to increase the numbers rather than lower
+  @media only screen and (max-width: 425px) {
+    font-size: 31.25%; //? 5px
+  }
 }
 
 a {
-    color: black;
+  color: black;
 }
 
-////////////////////? SCROLL BAR
-html {
-    --scrollbarBG: #cfd8dc;
-    --thumbBG: #90a4ae;
+//* The real effects
+.header {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__logo {
+    width: 5rem;
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+    transition: transform .2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &--heading {
+    &__main {
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    &__text {
+      &--primary {
+        font-size: 8rem;
+        font-family: he, sans-serif;
+        line-height: 8rem;
+        margin-bottom: 2rem;
+      }
+
+      &--secondary {
+        padding-bottom: 1rem;
+        text-align: center;
+        font-family: k, sans-serif;
+      }
+
+      &--para {
+        width: 55rem;
+        text-align: center;
+        font-size: 1.8rem;
+        font-family: cd, sans-serif;
+        letter-spacing: 2px;
+        line-height: 2rem;
+      }
+    }
+
+    &__icons {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      width: 50%;
+      margin-top: 2rem;
+
+      &--each {
+        width: 5rem;
+        transition: all .5s cubic-bezier(0.19, 1, 0.22, 1);
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
 }
 
-body::-webkit-scrollbar {
-    width: 11px;
+.footer {
+  position: absolute;
+  bottom: 1rem;
+
+  &__text {
+    text-align: center;
+    font-size: 1.4rem;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  &__logo--svg {
+    width: 2.4rem;
+    margin: 0.2rem;
+  }
 }
 
-body {
-    scrollbar-width: thin;
-    scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+#canvas-basic {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
-
-// body::-webkit-scrollbar-track {
-//   background: var(--scrollbarBG);
-// }
-body::-webkit-scrollbar-thumb {
-    background-color: var(--thumbBG);
-    border-radius: 6px;
-    border: 3px solid var(--scrollbarBG);
-}
-
-////////////////////? SCROLL BAR
